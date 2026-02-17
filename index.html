@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/MscVesselTrackerDart/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="MSC Vessel Tracker">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="MSC Vessel Tracker">
+
+  <title>MSC Vessel Tracker</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZWl3aN7P8Ea5S4ucQFg9ZseAotBx2Cg"></script>
+
+  <script src="flutter.js" defer></script>
+
+  <style>
+    body {
+      background-color: #001F54;
+      margin: 0;
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading" class="loading">
+    <h2>Loading...</h2>
+  </div>
+
+  <script>
+    window.addEventListener('load', function (ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: null,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            document.querySelector('#loading').remove();
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
