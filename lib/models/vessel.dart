@@ -78,7 +78,7 @@ class Vessel {
     this.trueWindSpeed,
     this.trueWindDirection,
   });
-
+//
   factory Vessel.fromJson(Map<String, dynamic> json) => _$VesselFromJson(json);
   Map<String, dynamic> toJson() => _$VesselToJson(this);
 
